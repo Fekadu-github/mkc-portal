@@ -1,0 +1,144 @@
+/* MG Auto look for the church portal: same colours (dark + light), fonts, icons, cover, sidebar and layout. Loaded after portal.css. */
+:root,[data-theme="dark"]{color-scheme:dark;
+  --bg:#060912;--bg2:#0b1226;--pn:rgba(17,26,48,.72);--pn2:#0f1830;--ln:rgba(120,150,225,.17);--ln2:rgba(120,150,225,.32);
+  --tx:#eaf0ff;--mu:#93a4c7;--bl:#4f8cff;--cy:#22d3ee;--gr:#34d399;--rd:#ff6b78;--am:#fbbf24;
+  --field:rgba(7,12,28,.72);--th:rgba(255,255,255,.045);--hov:rgba(79,140,255,.11);--on:#04101f;
+  --grad:linear-gradient(135deg,#4f8cff 0%,#22d3ee 100%);--grad2:linear-gradient(135deg,#34d399 0%,#22d3ee 100%);
+  --shadow:0 12px 40px rgba(0,0,0,.45);--shadow-s:0 2px 10px rgba(0,0,0,.35);
+  --aurora:radial-gradient(60rem 30rem at 88% -12%,rgba(79,140,255,.20),transparent 70%),radial-gradient(48rem 28rem at -8% 22%,rgba(52,211,153,.11),transparent 70%),radial-gradient(40rem 24rem at 60% 110%,rgba(34,211,238,.08),transparent 70%);
+  --sb:linear-gradient(180deg,rgba(14,24,52,.92),rgba(7,11,26,.94));
+  --navy:var(--tx);--blue:var(--bl);--red:var(--rd);--gold:var(--am);--sky:var(--hov);--ink:var(--tx);--muted:var(--mu);--line:var(--ln);--white:var(--pn2)}
+[data-theme="light"]{color-scheme:light;
+  --bg:#eef2fb;--bg2:#e4ebf8;--pn:rgba(255,255,255,.84);--pn2:#ffffff;--ln:rgba(40,62,120,.14);--ln2:rgba(40,62,120,.28);
+  --tx:#101a35;--mu:#55668c;--bl:#2f6bff;--cy:#0891b2;--gr:#0d946a;--rd:#d92d3f;--am:#b7791f;
+  --field:#ffffff;--th:rgba(20,44,100,.055);--hov:rgba(47,107,255,.08);--on:#ffffff;
+  --grad:linear-gradient(135deg,#2f6bff 0%,#0ea5e9 100%);--grad2:linear-gradient(135deg,#0d946a 0%,#0891b2 100%);
+  --shadow:0 14px 40px rgba(30,50,110,.14);--shadow-s:0 2px 10px rgba(30,50,110,.10);
+  --aurora:radial-gradient(60rem 30rem at 88% -12%,rgba(47,107,255,.14),transparent 70%),radial-gradient(48rem 28rem at -8% 22%,rgba(13,148,106,.10),transparent 70%);
+  --sb:linear-gradient(180deg,rgba(255,255,255,.92),rgba(240,245,255,.94))}
+
+html,body{background-color:var(--bg)}
+body{background-image:var(--aurora);background-repeat:no-repeat;background-attachment:fixed;color:var(--tx);font:15px/1.5 'Plus Jakarta Sans','Noto Sans Ethiopic',system-ui,'Segoe UI',Arial,sans-serif;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;padding-bottom:env(safe-area-inset-bottom,0)}
+h1,h2,h3,.side-brand b,.stat-card strong,.report-card strong{font-family:'Space Grotesk','Plus Jakarta Sans','Noto Sans Ethiopic',sans-serif;letter-spacing:-.01em}
+label{color:var(--mu);font-weight:600;letter-spacing:.02em}
+input,select,textarea{background:var(--field);color:var(--tx);border:1px solid var(--ln);border-radius:10px;transition:border-color .15s,box-shadow .15s}
+input::placeholder,textarea::placeholder{color:var(--mu);opacity:.6}
+input:hover,select:hover,textarea:hover{border-color:var(--ln2)}
+input:focus,select:focus,textarea:focus{border-color:var(--bl);box-shadow:0 0 0 3px color-mix(in srgb,var(--bl) 28%,transparent)}
+select option{background:var(--pn2);color:var(--tx)}
+button:focus-visible,a:focus-visible{outline:2px solid var(--bl);outline-offset:2px}
+
+/* icons: one 24px line set, colour from the text */
+.ic{width:19px;height:19px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:-4px}
+svg.sprite{position:absolute;width:0;height:0;overflow:hidden}
+
+/* buttons */
+.primary,.secondary{border-radius:12px;font-weight:700;transition:transform .15s,filter .15s,background .15s}
+.primary{background:var(--grad);color:#fff;box-shadow:0 8px 24px color-mix(in srgb,var(--bl) 34%,transparent)}
+.primary:hover{background:var(--grad);filter:brightness(1.1);transform:translateY(-1px)}
+.secondary{background:var(--th);color:var(--tx);box-shadow:inset 0 0 0 1px var(--ln)}
+.secondary:hover{background:var(--hov);box-shadow:inset 0 0 0 1px var(--ln2)}
+.text-btn{color:var(--bl)}.row-actions button{color:var(--bl)}
+.eyebrow{color:var(--gr);letter-spacing:.16em}
+.error{color:var(--rd);font-weight:600}
+
+/* login = cover: brand panel + card */
+.login-screen{padding:0;display:grid;grid-template-columns:1.05fr 1fr;place-items:stretch;background:none}
+.cv-l{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 36px;background:radial-gradient(120% 90% at 0% 0%,#12306b 0%,#0a1634 42%,#060912 80%);color:#eaf0ff}
+.cv-l::before,.cv-l::after{content:'';position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;animation:mgdrift 14s ease-in-out infinite alternate}
+.cv-l::before{width:360px;height:360px;background:#4f8cff;top:-90px;left:-80px}.cv-l::after{width:300px;height:300px;background:#34d399;bottom:-80px;right:-60px;animation-delay:-6s;opacity:.35}
+.cv-l>*{position:relative;z-index:1}
+.cv-logo{width:min(220px,46vw);aspect-ratio:1;object-fit:contain;background:#fff;border-radius:50%;padding:14px;box-shadow:0 0 0 3px rgba(255,255,255,.12),0 20px 60px rgba(79,140,255,.4);animation:mgfloat 6s ease-in-out infinite}
+.cv-l h1{font-size:clamp(34px,4.6vw,54px);line-height:1.05;margin:22px 0 0;color:#fff;font-weight:700}
+.cv-l h1 span{background:var(--grad2);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.cv-l .sub{font:600 13px 'Plus Jakarta Sans',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#9cc0ff;margin-top:10px}
+.cv-l p{max-width:430px;color:#c5d1ee;margin:18px 0 0;font-size:15px}
+.cv-chips{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:460px}
+.cv-chips li{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:6px 13px;border-radius:99px;color:#dbe6ff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(8px)}
+.cv-chips .ic{width:15px;height:15px}
+.cv-l .bar{width:140px;height:3px;border-radius:3px;margin-top:22px;background:var(--grad2)}
+.cv-r{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px clamp(20px,6vw,72px);min-height:100vh}
+.cv-top{position:absolute;top:calc(18px + env(safe-area-inset-top,0));right:20px}
+.login-card{width:100%;max-width:460px;background:var(--pn);border:1px solid var(--ln2);border-radius:22px;padding:30px;box-shadow:var(--shadow);backdrop-filter:blur(18px);text-align:left}
+.login-card h1{font-size:34px;margin:6px 0 8px}.login-card p{color:var(--mu)}
+.login-card>.login-logo{display:none}
+#resetScreen{display:grid;place-items:center;grid-template-columns:1fr;padding:25px;background-color:var(--bg);background-image:var(--aurora)}
+#resetScreen.hidden{display:none!important}#resetScreen .login-logo{display:block!important;margin:0 auto}
+.demo-note{background:var(--th);border:1px dashed var(--ln2);color:var(--mu)}
+.back-link{color:var(--bl)}.login-credit{border-top-color:var(--ln);color:var(--mu)}.login-credit a{color:var(--mu)}.login-credit a:hover{color:var(--bl)}
+.credit-eyebrow{color:var(--gr)}.login-credit b{color:var(--tx)}
+@keyframes mgdrift{to{transform:translate(40px,30px) scale(1.12)}}@keyframes mgfloat{50%{transform:translateY(-8px)}}
+
+/* sidebar */
+.sidebar{background:var(--sb);color:var(--tx);border-right:1px solid var(--ln);backdrop-filter:blur(18px)}
+.side-brand{border-bottom:1px solid var(--ln)}
+.side-brand img{width:46px;height:46px;border-radius:50%;object-fit:contain;background:#fff;padding:3px;box-shadow:0 0 0 2px var(--ln2),0 6px 20px color-mix(in srgb,var(--bl) 35%,transparent)}
+.side-brand b{font-size:19px;font-weight:700}.side-brand small{color:var(--gr);font:600 12px 'Plus Jakarta Sans',sans-serif;letter-spacing:.04em}
+.profile-mini{margin:12px 0 4px;padding:12px;border:1px solid var(--ln);border-radius:16px;background:var(--th)}
+.profile-mini>div:first-child,.avatar{background:var(--grad);color:#fff}
+.profile-mini small{color:var(--mu)}
+.sidebar nav{gap:3px;padding:8px 0}
+.ng-l{font:700 11px 'Plus Jakarta Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);padding:12px 14px 4px;opacity:.85}
+.nav-item{display:flex;align-items:center;gap:12px;font:600 14.5px 'Plus Jakarta Sans','Noto Sans Ethiopic',sans-serif;color:var(--mu);padding:10px 14px;border-radius:12px;position:relative;white-space:nowrap;transition:background .15s,color .15s,transform .15s}
+.nav-item:hover{background:var(--hov);color:var(--tx);transform:translateX(2px)}
+.nav-item.active{color:var(--tx);background:color-mix(in srgb,var(--bl) 16%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--bl) 30%,transparent)}
+.nav-item.active::before{content:'';position:absolute;left:-14px;top:9px;bottom:9px;width:4px;border-radius:0 4px 4px 0;background:var(--grad)}
+.nav-item.active .ic{color:var(--bl)}
+.side-bottom{border-top:1px solid var(--ln)}.side-bottom a,.side-bottom button{color:var(--mu)}
+.portal-credit{color:var(--mu)}.portal-credit a{color:var(--mu)}.portal-credit b{color:var(--tx)}
+
+/* top bar */
+.topbar{background:color-mix(in srgb,var(--pn2) 78%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--ln);padding-top:env(safe-area-inset-top,0)}
+.crumb{color:var(--mu)}.lang-pill{background:var(--th);color:var(--tx);box-shadow:inset 0 0 0 1px var(--ln)}
+.avatar{border:0}.icon-btn{color:var(--tx)}
+.tt{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:12px;border:1px solid var(--ln);background:var(--th);color:var(--tx)}
+.tt:hover{background:var(--hov);border-color:var(--ln2)}
+[data-theme="dark"] .tt .i-sun,[data-theme="light"] .tt .i-moon{display:none}
+
+/* cards, tables, modals */
+.stat-card,.panel,.family-card,.department-card,.event-card,.report-card,.small-group-card,.admin-content-card{background:var(--pn);border:1px solid var(--ln);border-radius:16px;box-shadow:var(--shadow-s);backdrop-filter:blur(10px)}
+.stat-card strong,.report-card strong,.dept-line b{color:var(--tx)}
+.stat-card span,.stat-card small,.panel-head p,.family-card p,.department-card p,.event-card p,.report-card p,.muted,.small-group-card p,.admin-content-body p,.empty{color:var(--mu)}
+.stat-card:hover,.family-card:hover,.department-card:hover,.event-card:hover{border-color:var(--ln2);transform:translateY(-2px);transition:transform .15s,border-color .15s}
+.bar{background:var(--th)}.bar i{background:var(--grad)}
+.dept-line,td,th{border-bottom-color:var(--ln)}
+th{background:var(--th);color:var(--mu)}td{color:var(--tx)}
+tbody tr:hover td{background:var(--hov)}
+.person-avatar,.profile-big-avatar{background:color-mix(in srgb,var(--bl) 18%,transparent);color:var(--bl)}
+.person-cell b{color:var(--tx)}.person-cell small{color:var(--mu)}
+.badge{background:color-mix(in srgb,var(--bl) 16%,transparent);color:var(--bl)}
+.badge.red{background:color-mix(in srgb,var(--rd) 16%,transparent);color:var(--rd)}
+.badge.green{background:color-mix(in srgb,var(--gr) 16%,transparent);color:var(--gr)}
+.chip,.checkbox-pill{background:var(--th);border-color:var(--ln);color:var(--tx)}
+.event-card .date{color:var(--gr)}
+.member-check-list,.profile-grid>div{background:var(--th);border-color:var(--ln)}.member-check-row{border-bottom-color:var(--ln)}
+.profile-grid small,.profile-hero p{color:var(--mu)}.profile-hero{border-bottom-color:var(--ln)}
+.modal{background:rgba(3,6,16,.62);backdrop-filter:blur(4px)}
+.modal-card{background:var(--pn2);color:var(--tx);border:1px solid var(--ln2);box-shadow:var(--shadow)}
+.modal-head,.form-actions{border-color:var(--ln)}
+.toast{background:var(--pn2);color:var(--tx);border:1px solid var(--ln2);box-shadow:var(--shadow)}
+.content-tab{color:var(--mu)}.content-tab.active,.content-tab:hover{color:var(--tx);border-bottom-color:var(--bl)}
+.dob-radio{color:var(--mu)}.dob-age-display{color:var(--gr)}
+
+/* dashboard quick actions */
+.qa{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 20px}
+.qa-b{display:inline-flex;align-items:center;gap:8px;font:700 13.5px 'Plus Jakarta Sans',sans-serif;color:var(--tx);background:var(--pn);border:1px solid var(--ln);border-radius:12px;padding:10px 16px;box-shadow:var(--shadow-s)}
+.qa-b:hover{background:var(--hov);border-color:var(--ln2);transform:translateY(-1px)}
+.qa-b kbd{font:600 11px 'Plus Jakarta Sans',sans-serif;color:var(--mu);border:1px solid var(--ln);border-radius:6px;padding:1px 6px}
+.qa-b .ic{color:var(--bl)}
+
+/* phone bottom bar */
+.btm{display:none}
+@media(max-width:900px){.login-screen{grid-template-columns:1fr}.cv-l{padding:34px 20px}.cv-l p,.cv-chips{display:none}.cv-r{min-height:0;padding:24px 16px 40px}}
+@media(max-width:760px){
+  .sidebar{box-shadow:14px 0 35px rgba(0,0,0,.35)}
+  .content{padding-bottom:84px}
+  .btm{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:960;background:color-mix(in srgb,var(--pn2) 92%,transparent);backdrop-filter:blur(16px);border-top:1px solid var(--ln);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0))}
+  .btm button{display:flex;flex-direction:column;align-items:center;gap:2px;border:0;background:none;color:var(--mu);font:600 10.5px 'Plus Jakarta Sans',sans-serif;padding:6px 2px;border-radius:12px;min-height:48px}
+  .btm button.on{color:var(--tx);background:color-mix(in srgb,var(--bl) 16%,transparent)}.btm button.on .ic{color:var(--bl)}
+  .toast{bottom:76px}
+}
+@media print{.sidebar,.topbar,.btm,.qa{display:none!important}body{background:#fff;color:#000}}
+.department-card .dept-icon{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:12px;background:color-mix(in srgb,var(--bl) 16%,transparent);color:var(--bl)}
+.department-card .dept-icon .ic,.small-group-card .dept-icon .ic{width:22px;height:22px}
+.small-group-card .dept-icon{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:12px;background:color-mix(in srgb,var(--gr) 16%,transparent);color:var(--gr)}

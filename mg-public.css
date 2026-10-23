@@ -1,0 +1,19 @@
+/* Public website: same fonts and colour direction as MG Auto (blue to cyan gradient, Space Grotesk headings). Loaded after styles.css. */
+:root{--navy:#0b1226;--navy2:#12306b;--red:#2f6bff;--gold:#22d3ee;--cream:#eef2fb;--paper:#f7f9ff;--ink:#101a35;--muted:#55668c;--line:rgba(40,62,120,.14);--shadow:0 14px 40px rgba(30,50,110,.14)}
+body{font-family:'Plus Jakarta Sans','Noto Sans Ethiopic',system-ui,Arial,sans-serif;background:var(--paper)}
+body.am{font-family:'Noto Sans Ethiopic','Plus Jakarta Sans',Arial,sans-serif}
+h1,h2,h3,h4,.brand strong,.footer-brand h3{font-family:'Space Grotesk','Plus Jakarta Sans','Noto Sans Ethiopic',sans-serif;letter-spacing:-.01em}
+.site-header{background:rgba(247,249,255,.9)}
+.hero{background:radial-gradient(120% 90% at 0% 0%,#12306b 0%,#0a1634 42%,#060912 80%)}
+.hero::after{background:radial-gradient(circle at 85% 20%,rgba(79,140,255,.30),transparent 40%),radial-gradient(circle at 10% 100%,rgba(52,211,153,.18),transparent 40%)}
+.hero-logo{background:#fff;border-radius:50%;padding:12px;box-shadow:0 0 0 3px rgba(255,255,255,.12),0 20px 60px rgba(79,140,255,.4)}
+.eyebrow,.section-label{color:#0d946a;letter-spacing:.16em}
+.hero .eyebrow,.hero .section-label{color:#5eead4}
+.btn{border-radius:12px;font-weight:700;transition:transform .15s,filter .15s}
+.btn-primary{background:linear-gradient(135deg,#2f6bff,#0ea5e9);color:#fff;border:0;box-shadow:0 8px 24px rgba(47,107,255,.34)}
+.btn-primary:hover{background:linear-gradient(135deg,#2f6bff,#0ea5e9);filter:brightness(1.1);transform:translateY(-1px)}
+.lang-btn.active{background:linear-gradient(135deg,#2f6bff,#0ea5e9)}
+.service-card,.ministry-card,.leader-card,.map-card{border-radius:16px;border:1px solid var(--line);box-shadow:0 2px 10px rgba(30,50,110,.10)}
+.service-card:hover,.ministry-card:hover,.leader-card:hover{transform:translateY(-2px);box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s}
+.desktop-nav a:hover,.text-link:hover{color:#2f6bff}
+footer{background:linear-gradient(180deg,#0b1226,#060912)}

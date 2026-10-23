@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Church Management Portal | Meserete Kristos Church — Amanuel</title>
+<meta name="theme-color" content="#060912">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+Ethiopic:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="portal.css"><link rel="stylesheet" href="mg-theme.css">
+<script>try{var t=localStorage.getItem('mkc_theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','dark')}</script>
+</head>
+<body>
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<symbol id="i-dash" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="9" rx="1.8"/><rect x="13.5" y="3" width="7.5" height="5" rx="1.8"/><rect x="13.5" y="11" width="7.5" height="10" rx="1.8"/><rect x="3" y="15" width="7.5" height="6" rx="1.8"/></symbol>
+<symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5a3 3 0 010 6M18 14c2 .6 3.5 2.5 3.5 5"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 11L12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5h4v5"/></symbol>
+<symbol id="i-dept" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.8"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6.5C10 5 7.5 4.5 4.5 4.5v13c3 0 5.5.5 7.5 2 2-1.5 4.5-2 7.5-2v-13c-3 0-5.5.5-7.5 2z"/><path d="M12 6.5v13"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0112 7.6 4.3 4.3 0 0119.5 10c0 5.4-7.5 10-7.5 10z"/></symbol>
+<symbol id="i-rep" viewBox="0 0 24 24"><path d="M4 20V11M10 20V5M16 20v-8"/><path d="M2 20h20"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L19 9a2.1 2.1 0 00-3-3L5 17z"/><path d="M14 8l3 3"/></symbol>
+<symbol id="i-staff" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2.2"/><circle cx="12" cy="10" r="2.6"/><path d="M7.5 17c.8-2 2.5-3 4.5-3s3.7 1 4.5 3"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol>
+<symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0013 0M12 18v3"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.2"/><path d="M8 10.5V8a4 4 0 018 0v2.5"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A15 15 0 013 6a2 2 0 012-2z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.2"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol>
+</defs></svg>
+<div id="loginScreen" class="login-screen">
+  <aside class="cv-l">
+    <img class="cv-logo" src="assets/church-logo.png" alt="Church logo">
+    <h1>MKC <span>Amanuel</span></h1>
+    <div class="sub">Church Management Portal</div>
+    <p>One secure workspace for people, families, attendance, Bible study and follow-up.</p>
+    <ul class="cv-chips"><li><svg class="ic" aria-hidden="true"><use href="#i-people"/></svg>People</li><li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Attendance</li><li><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg>Bible Study</li><li><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg>Follow-up</li><li><svg class="ic" aria-hidden="true"><use href="#i-rep"/></svg>Reports</li></ul>
+    <div class="bar"></div>
+  </aside>
+  <div class="cv-r">
+  <button type="button" class="tt cv-top" data-theme-toggle aria-label="Light / dark theme"><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg></button>
+  <div class="login-card">
+    <img src="assets/church-logo.png" alt="Church logo" class="login-logo">
+    <div class="eyebrow">PRIVATE CHURCH MANAGEMENT PORTAL</div>
+    <h1>Welcome back</h1>
+    <p>Sign in to manage church records according to your department permissions.</p>
+    <form id="loginForm">
+      <label>Email address<input id="username" type="email" autocomplete="username" required placeholder="name@example.com"></label>
+      <label>Password<input id="password" type="password" autocomplete="current-password" required placeholder="Enter password"></label>
+      <button class="primary full" type="submit">Sign in</button>
+      <div id="loginError" class="error"></div>
+    </form>
+    <div style="text-align:center;margin:12px 0 4px"><a href="#" id="forgotPassword" class="back-link">Forgot password?</a></div>
+    <div class="demo-note"><strong>Production sign-in</strong><br>Use the email/password created in Supabase Authentication. After authentication, the portal loads the user role and department from the protected <b>profiles</b> table. Privileged users should enable MFA before production use.</div>
+    <a href="index.html" class="back-link">← Back to public website</a>
+    <div class="login-credit"><span class="credit-eyebrow">DESIGN &amp; DEVELOPMENT</span><b>Fekadu Endrias</b><span>Web Designer &amp; Developer · Portal Developer</span><a href="tel:0913212724">0913 212 724</a><a href="mailto:fekaduendrias@gmail.com">fekaduendrias@gmail.com</a></div>
+  </div>
+  </div>
+</div>
+
+<div id="resetScreen" class="login-screen hidden">
+  <div class="login-card">
+    <img src="assets/church-logo.png" alt="Church logo" class="login-logo">
+    <div class="eyebrow">SECURE PASSWORD RECOVERY</div>
+    <h1>Create a new password</h1>
+    <p>Enter and confirm your new password for the church management portal.</p>
+    <form id="resetForm">
+      <label>New password<input id="newPassword" type="password" autocomplete="new-password" minlength="8" required placeholder="Enter new password"></label>
+      <label>Confirm password<input id="confirmPassword" type="password" autocomplete="new-password" minlength="8" required placeholder="Confirm new password"></label>
+      <button class="primary full" type="submit">Update Password</button>
+      <div id="resetError" class="error"></div>
+    </form>
+    <a href="#" id="backToLogin" class="back-link">← Back to login</a>
+  </div>
+</div>
+
+<div id="app" class="app hidden">
+<aside class="sidebar">
+  <div class="side-brand"><img src="assets/church-logo.png" alt="MKC Amanuel logo"><div><b>MKC Amanuel</b><small>Church Management</small></div></div>
+  <div class="profile-mini"><div id="userAvatar">A</div><div><b id="sideUser">Admin</b><small id="sideRole">Super Admin</small></div></div>
+  <nav>
+    <div class="ng-l">Work</div>
+    <button class="nav-item active" data-view="dashboard"><svg class="ic" aria-hidden="true"><use href="#i-dash"/></svg> <span>Dashboard</span></button>
+    <button class="nav-item" data-view="members"><svg class="ic" aria-hidden="true"><use href="#i-people"/></svg> <span>People & Members</span></button>
+    <button class="nav-item bible-study-admin-hide self-lookup-hide" data-view="families"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg> <span>Families</span></button>
+    <button class="nav-item bible-study-admin-hide" data-view="departments"><svg class="ic" aria-hidden="true"><use href="#i-dept"/></svg> <span>Departments</span></button>
+    <button class="nav-item self-lookup-hide" data-view="attendance"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> <span>Attendance</span></button>
+    <button class="nav-item self-lookup-hide" data-view="smallGroups"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg> <span>Bible Study</span></button>
+    <button class="nav-item bible-study-admin-hide self-lookup-hide" data-view="events"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg> <span>Events</span></button>
+    <button class="nav-item self-lookup-hide" data-view="followup"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg> <span>Follow-up</span></button>
+    <button class="nav-item bible-study-admin-hide self-lookup-hide" data-view="reports"><svg class="ic" aria-hidden="true"><use href="#i-rep"/></svg> <span>Reports</span></button>
+    <div class="ng-l admin-only">Admin</div>
+    <button class="nav-item super-admin-only" data-view="content"><svg class="ic" aria-hidden="true"><use href="#i-edit"/></svg> <span>Website Content</span></button>
+    <button class="nav-item admin-only" data-view="users"><svg class="ic" aria-hidden="true"><use href="#i-staff"/></svg> <span>Users & Permissions</span></button>
+  </nav>
+  <div class="side-bottom"><a href="index.html">Public Website</a><button id="logout">Sign out</button></div>
+  <div class="portal-credit"><span class="credit-eyebrow">DESIGN &amp; DEVELOPMENT</span><b>Fekadu Endrias</b><span>Web Designer &amp; Developer · Portal Developer</span><a href="tel:0913212724">📞 0913 212 724</a><a href="mailto:fekaduendrias@gmail.com">✉️ fekaduendrias@gmail.com</a></div>
+</aside>
+
+<main class="main">
+  <header class="topbar"><button id="mobileMenu" class="icon-btn" aria-label="Open navigation" aria-expanded="false" aria-controls="portalSidebar"><svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg></button><div><div class="crumb">Church Management System</div><h2 id="pageTitle">Dashboard</h2></div><div class="top-actions"><button type="button" class="tt" data-theme-toggle aria-label="Light / dark theme"><svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg><svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg></button><span class="lang-pill">EN / አማ</span><button class="avatar" id="topAvatar" title="Account security / MFA" aria-label="Account security and multi-factor authentication">A</button></div></header>
+<div class="content">
+<section id="dashboardView" class="view">
+  <div class="welcome-row"><div><span class="eyebrow">AMANUEL LOCAL CHURCH</span><h1>Church overview</h1><p>Manage people, departments and ministry activity from one secure workspace.</p></div><button class="primary write-action" id="quickAdd"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg> Add Person</button></div>
+  <div class="qa">
+    <button type="button" class="text-btn qa-b" data-view="members"><svg class="ic" aria-hidden="true"><use href="#i-people"/></svg>People</button>
+    <button type="button" class="text-btn qa-b self-lookup-hide" data-view="attendance"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Take attendance</button>
+    <button type="button" class="text-btn qa-b self-lookup-hide" data-view="followup"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg>Follow-up</button>
+    <button type="button" class="qa-b" id="mgSearch"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>Search people<kbd>Ctrl K</kbd></button>
+  </div>
+  <div class="stat-grid">
+    <div class="stat-card"><span>Total People</span><strong id="statPeople">0</strong><small>Registered records</small></div>
+    <div class="stat-card"><span>Families</span><strong id="statFamilies">0</strong><small>Households</small></div>
+    <div class="stat-card"><span>Departments</span><strong id="statDepartments">0</strong><small>Active ministries</small></div>
+    <div class="stat-card"><span>Follow-up</span><strong id="statFollowup">0</strong><small>Open cases</small></div>
+  </div>
+  <div class="dashboard-grid">
+    <div class="panel"><div class="panel-head"><div><h3>Age groups</h3><p>Current people distribution</p></div></div><div id="ageBars" class="bars"></div></div>
+    <div class="panel"><div class="panel-head"><div><h3>Department snapshot</h3><p>People assigned to ministries</p></div></div><div id="deptSnapshot"></div></div>
+  </div>
+  <div class="panel self-lookup-hide"><div class="panel-head"><div><h3>Recent registrations</h3><p>Latest people added to the database</p></div><button class="text-btn" data-view="members">View all</button></div><div id="recentPeople"></div></div>
+</section>
+
+<section id="membersView" class="view hidden"><div class="section-toolbar"><div><span class="eyebrow">PEOPLE DATABASE</span><h1>People & Members</h1><p>Search, add, update and manage member records based on your role.</p></div><div class="toolbar-actions"><button class="secondary hidden" id="manageChoirGroupsBtn"><svg class="ic" aria-hidden="true"><use href="#i-mic"/></svg> Manage Choir Groups</button><button class="secondary" id="exportCsvTop">Export CSV (all)</button><button class="secondary" id="exportXlsxTop">Export Excel (filtered)</button><button class="primary write-action" id="addPerson"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg> Add Person</button></div></div>
+<div class="filter-panel"><input id="memberSearch" placeholder="Search name, phone, ID or family…"><select id="ageFilter" class="self-lookup-hide"><option value="">All age groups</option><option>Children</option><option>Youth</option><option>Adult</option><option>Senior</option></select><select id="deptFilter" class="self-lookup-hide"><option value="">All departments</option></select><select id="subgroupFilter" class="self-lookup-hide"><option value="">All choir/worship groups</option></select><select id="statusFilter" class="self-lookup-hide"><option value="">All statuses</option><option>Member</option><option>Visitor</option><option>New Believer</option><option>Leader</option></select><select id="bibleStudyFilter" class="self-lookup-hide"><option value="">All Bible study statuses</option><option value="green">🟢 On track (green)</option><option value="yellow">🟡 Under 50% attendance (yellow)</option><option value="red">🔴 Not in a small group (red)</option></select><select id="sortFilter" class="self-lookup-hide"><option value="name_asc">Name (A–Z)</option><option value="name_desc">Name (Z–A)</option><option value="age_asc">Age (Low–High)</option><option value="age_desc">Age (High–Low)</option><option value="dept_asc">Department (A–Z)</option><option value="dept_desc">Department (Z–A)</option></select></div>
+<div class="panel table-panel"><div class="table-wrap"><table><thead><tr><th>Person</th><th>Age</th><th>Group</th><th>Department</th><th>Choir/Worship</th><th>Status</th><th>Bible Study</th><th>Bible Study Teacher</th><th>Phone</th><th></th></tr></thead><tbody id="memberTable"></tbody></table></div></div><div id="memberDeletionRequests"></div></section>
+
+<section id="familiesView" class="view hidden"><div class="section-toolbar"><div><span class="eyebrow">HOUSEHOLDS</span><h1>Families</h1><p>See households and the people linked to them.</p></div></div><div id="familyGrid" class="family-grid"></div></section>
+
+<section id="departmentsView" class="view hidden"><div class="section-toolbar"><div><span class="eyebrow">MINISTRY STRUCTURE</span><h1>Departments</h1><p>Department-level access and membership overview. Deletion requires a justified request and Super Admin approval.</p></div><button class="primary admin-only" id="addDepartment">＋ Add Department</button></div><div id="departmentGrid" class="department-grid"></div><div id="departmentMembersPanel" class="panel admin-only hidden"><h3>View members by department</h3><label>Department<select id="departmentMembersSelect"><option value="">Choose a department…</option></select></label><div id="departmentMembersList"></div></div></section>
+
+<section id="attendanceView" class="view hidden"><div class="section-toolbar"><div><span class="eyebrow">MINISTRY ACTIVITY</span><h1>Attendance</h1><p>Record each attendee’s name, father’s name, service, and department. Records are stored in PostgreSQL and protected by Row-Level Security.</p></div><button class="primary write-action" id="markAttendance">＋ Record Attendance</button></div>
+<div class="filter-panel"><select id="attendancePeriod"><option value="">All time</option><option value="1">Last 1 month</option><option value="3">Last 3 months</option><option value="6">Last 6 months</option><option value="12">Last 12 months</option><option value="custom">Custom range</option></select><label id="attendanceFromWrap" class="hidden">From<input id="attendanceFrom" type="date"></label><label id="attendanceToWrap" class="hidden">To<input id="attendanceTo" type="date"></label></div>
+<div class="panel"><div id="attendanceList"></div></div></section>
+
+<section id="smallGroupsView" class="view hidden"><div class="section-toolbar"><div><span class="eyebrow">CELL MINISTRY</span><h1>Bible Study Small Groups</h1><p>Create small groups, assign a leader and members, take attendance, and track monthly participation. Each member belongs to one small group; the Members list shows a green, red, or yellow signal for each person.</p></div><button class="primary write-action" id="addSmallGroup">＋ Add Small Group</button></div>
+<div id="smallGroupGrid" class="small-group-grid"></div>
+<div class="panel"><h3>Export attendance report</h3><p class="muted">Exports Excel workbook(s) with each member's Bible study sessions, present count, and attendance percentage broken down by month for the chosen period.</p><div class="form-grid"><label>Small group<select id="sgReportGroup"><option value="">All small groups</option></select></label><label>Period<select id="sgReportPeriod"><option value="1">Last 1 month</option><option value="3">Last 3 months</option><option value="6">Last 6 months</option><option value="12">Last 12 months</option></select></label></div><div class="form-actions"><button class="primary" id="exportSmallGroupReport">Export Excel</button></div></div>
+</section>
+
+<section id="eventsView" class="view hidden"><div class="section-toolbar"><div><span class="eyebrow">CHURCH CALENDAR</span><h1>Events</h1><p>Plan programs, trainings and church activities.</p></div><button class="primary write-action" id="addEvent">＋ Add Event</button></div><div id="eventGrid" class="event-grid"></div></section>
+
+<section id="followupView" class="view hidden"><div class="section-toolbar"><div><span class="eyebrow">PASTORAL CARE</span><h1>Follow-up</h1><p>Track visitors, new believers and assigned follow-up actions.</p></div><button class="primary write-action" id="addFollowup">＋ Add Case</button></div>
+<div class="filter-panel bible-study-admin-only hidden"><select id="followupBibleStudyFilter"><option value="">All Bible study statuses</option><option value="red">🔴 Not in a small group (red)</option><option value="yellow">🟡 Under 50% attendance (yellow)</option><option value="green">🟢 On track (green)</option></select></div>
+<div class="panel table-panel"><div class="table-wrap"><table><thead><tr><th>Person</th><th>Bible Study</th><th>Reason</th><th>Assigned to</th><th>Last contact</th><th>Status</th><th></th></tr></thead><tbody id="followupTable"></tbody></table></div></div></section>
+
+<section id="reportsView" class="view hidden"><div class="section-toolbar"><div><span class="eyebrow">REPORTING</span><h1>Reports</h1><p>High-level church statistics generated from authorized PostgreSQL records.</p></div><button class="secondary" id="exportCsv">Export People CSV</button></div><div id="reportCards" class="report-grid"></div>
+<div class="panel">
+  <h3>Period Report</h3>
+  <p class="muted">Events, added people, removed people, and closed follow-up cases for a chosen period.</p>
+  <div class="form-grid">
+    <label>Period<select id="reportPeriod"><option value="3">Last 3 months</option><option value="6">Last 6 months</option><option value="12">Last year</option><option value="custom">Custom range</option></select></label>
+    <label id="reportFromWrap" class="hidden">From<input id="reportFrom" type="date"></label>
+    <label id="reportToWrap" class="hidden">To<input id="reportTo" type="date"></label>
+  </div>
+  <div class="form-actions"><button class="primary" id="generateReport">Generate Report</button><button class="secondary" id="exportPeriodReportXlsx">Export XLSX</button></div>
+  <div id="periodReportResults"></div>
+</div>
+<div class="panel"><h3>Security status</h3><p class="muted">Authentication: Supabase Auth · Database: PostgreSQL · Access control: Row-Level Security · MFA: authenticator-app support · Audit: database triggers · Backups: configure Supabase backups and an off-site encrypted backup policy.</p></div><div class="panel"><h3>Data governance</h3><p class="muted">Use reports for ministry planning. Do not share personal information outside authorized church leadership. Member data is accessed only through authenticated sessions and database RLS policies.</p></div></section>
+
+<section id="contentView" class="view hidden">
+  <div class="section-toolbar"><div><span class="eyebrow">PUBLIC WEBSITE</span><h1>Website Content</h1><p>Publish Daily Updates, Sermons & Teachings, and feature Events on the public site. Only Super Admins can publish content.</p></div></div>
+  <div class="content-tabs">
+    <button class="content-tab active" data-tab="updates">Daily Updates</button>
+    <button class="content-tab" data-tab="sermons">Sermons & Teachings</button>
+    <button class="content-tab" data-tab="featuredEvents">Featured Events</button>
+    <button class="content-tab" data-tab="contact">Contact Info</button>
+    <button class="content-tab" data-tab="leaders">Leadership Team</button>
+    <button class="content-tab" data-tab="schedule">Service Schedule</button>
+  </div>
+  <div id="updatesTab" class="content-panel">
+    <div class="section-toolbar"><div></div><button class="primary" id="addUpdate">＋ New Daily Update</button></div>
+    <div id="updatesAdminGrid" class="admin-content-grid"></div>
+  </div>
+  <div id="sermonsTab" class="content-panel hidden">
+    <div class="section-toolbar"><div></div><button class="primary" id="addSermon">＋ New Sermon</button></div>
+    <div id="sermonsAdminGrid" class="admin-content-grid"></div>
+  </div>
+  <div id="featuredEventsTab" class="content-panel hidden">
+    <p class="muted">Toggle which upcoming events from the Events module appear on the public website.</p>
+    <div id="featuredEventsList" class="admin-content-grid"></div>
+  </div>
+  <div id="contactTab" class="content-panel hidden">
+    <div id="contactAdminBody"></div>
+  </div>
+  <div id="leadersTab" class="content-panel hidden">
+    <div class="section-toolbar"><div></div><button class="primary" id="addLeader">＋ Add Leader</button></div>
+    <div id="leadersAdminGrid" class="admin-content-grid"></div>
+  </div>
+  <div id="scheduleTab" class="content-panel hidden">
+    <div class="section-toolbar"><div></div><button class="primary" id="addSchedule">＋ Add Service</button></div>
+    <div id="scheduleAdminGrid" class="admin-content-grid"></div>
+  </div>
+</section>
+
+<section id="usersView" class="view hidden"><div class="section-toolbar"><div><span class="eyebrow">ACCESS CONTROL</span><h1>Users & Permissions</h1><p>Define who can access each church module.</p></div><button class="primary super-admin-only" id="addUser">＋ Add User</button></div><div class="panel table-panel"><div class="table-wrap"><table><thead><tr><th>User</th><th>Role</th><th>Department</th><th>Access</th><th>Status</th></tr></thead><tbody id="usersTable"></tbody></table></div></div></section>
+</div></main>
+</div>
+
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true"><div class="modal-card"><div class="modal-head"><h3 id="modalTitle">Add Person</h3><button id="closeModal" class="icon-btn" aria-label="Close dialog">×</button></div><div id="modalBody"></div></div></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="supabase-config.js"></script>
+<script src="ethiopian-calendar.js"></script>
+<script src="portal.js"></script>
+<nav class="btm" aria-label="Quick menu">
+  <button type="button" class="text-btn" data-view="dashboard"><svg class="ic" aria-hidden="true"><use href="#i-dash"/></svg>Home</button>
+  <button type="button" class="text-btn" data-view="members"><svg class="ic" aria-hidden="true"><use href="#i-people"/></svg>People</button>
+  <button type="button" class="text-btn" data-view="attendance"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Attendance</button>
+  <button type="button" class="text-btn" data-view="followup"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg>Follow-up</button>
+  <button type="button" id="btmMenu"><svg class="ic" aria-hidden="true"><use href="#i-more"/></svg>Menu</button>
+</nav>
+<script src="mg-ui.js"></script>
+</body></html>
