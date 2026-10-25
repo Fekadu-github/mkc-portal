@@ -43,3 +43,11 @@ Create the Supabase/PostgreSQL schema and replace browser storage/demo authentic
 
 ## v10 production database foundation
 The `supabase/` folder contains the PostgreSQL schema, authentication profile trigger, role model and Row Level Security policies. `PRODUCTION_PLAN.md` describes the remaining production work.
+
+## Installable app (PWA)
+
+The site is an installable Progressive Web App: `manifest.webmanifest`, `sw.js` (service worker), `offline.html`, `pwa.js` (registration + "Install" bar) and icons in `assets/icons/`.
+- Chrome / Edge / Android: an **Install** bar appears; or menu → Install app. iPhone / iPad (Safari): Share → Add to Home Screen.
+- Pages and scripts load from the network first (updates arrive at once) and from the phone's saved copy when offline. Supabase data and sign-in are never cached.
+- **On every deploy that changes files, raise `VERSION` in `sw.js`** (for example `mkc-v2`) so old saved copies are removed. New files must be added to `PRECACHE` in `sw.js`.
+- The site must be served over HTTPS (Netlify, Vercel, GitHub Pages and Cloudflare Pages all are).
